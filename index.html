@@ -12,26 +12,27 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #e0e0e0;
-            background: #0a0e27;
+            background: linear-gradient(135deg, #0a0515 0%, #1a0a3a 50%, #0f0520 100%);
+            overflow-x: hidden;
         }
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, #0f2027 0%, #1a1a3e 50%, #0a0e27 100%);
-            color: #00ff88;
-            padding: 1rem 0;
+            background: linear-gradient(135deg, rgba(25, 10, 58, 0.8) 0%, rgba(15, 5, 32, 0.8) 100%);
+            color: white;
+            padding: 1.5rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 20px rgba(0, 255, 136, 0.2);
-            border-bottom: 2px solid #00ff88;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 200, 0.2);
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -42,232 +43,294 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #00ff88;
-            text-shadow: 0 0 10px #00ff88;
+            background: linear-gradient(135deg, #00ffc8 0%, #ff00ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(0, 255, 200, 0.5);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         nav a {
             color: #e0e0e0;
             text-decoration: none;
             transition: all 0.3s;
-            border-bottom: 2px solid transparent;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
         nav a:hover {
-            color: #00ff88;
-            border-bottom: 2px solid #00ff88;
-            text-shadow: 0 0 10px #00ff88;
+            color: #00ffc8;
+            text-shadow: 0 0 10px #00ffc8;
+        }
+
+        .signup-btn {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+        }
+
+        .signup-btn:hover {
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.8);
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0f2027 0%, #1a3a3a 50%, #0a0e27 100%);
-            color: #e0e0e0;
-            padding: 8rem 2rem;
-            text-align: center;
-            border-bottom: 2px solid #00ff88;
+            background: linear-gradient(135deg, #190a3a 0%, #2a0a4a 50%, #0f0520 100%);
+            color: white;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-content {
-            max-width: 800px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 255, 200, 0.1) 0%, rgba(255, 0, 255, 0.05) 100%);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .hero-container {
+            max-width: 1400px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
-        .hero h1 {
+        .hero-content h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            color: #00ff88;
-            text-shadow: 0 0 20px #00ff88;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            font-weight: 700;
         }
 
-        .hero p {
-            font-size: 1.3rem;
+        .hero-content h1 span {
+            background: linear-gradient(135deg, #00ffc8 0%, #ff00ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             color: #b0b0b0;
         }
 
-        .cta-button {
-            background: linear-gradient(135deg, #00ff88 0%, #00cc6f 100%);
-            color: #0a0e27;
-            padding: 1rem 2.5rem;
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 30px;
             font-size: 1rem;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.6);
         }
 
-        .cta-button:hover {
+        .btn-primary:hover {
+            box-shadow: 0 0 40px rgba(124, 58, 237, 0.9);
             transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.8);
-            background: linear-gradient(135deg, #00cc6f 0%, #00ff88 100%);
         }
 
-        /* Problem Section */
-        .problem {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
+        .btn-secondary {
+            background: transparent;
+            color: #e0e0e0;
+            padding: 1rem 2rem;
+            border: 2px solid rgba(0, 255, 200, 0.5);
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .problem h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #00ff88;
-            text-shadow: 0 0 10px #00ff88;
+        .btn-secondary:hover {
+            border-color: #00ffc8;
+            color: #00ffc8;
+            box-shadow: 0 0 20px rgba(0, 255, 200, 0.4);
         }
 
-        .two-sided {
+        .stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .side {
-            background: linear-gradient(135deg, #1a1a3e 0%, #1a3a3a 100%);
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 5px solid #00ff88;
-            border: 2px solid #00ff88;
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
-        }
-
-        .side h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #00ff88;
-        }
-
-        .side ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .side li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: #d0d0d0;
-        }
-
-        .side li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #00ff88;
-            font-weight: bold;
-        }
-
-        /* Solution Section */
-        .solution {
-            background: linear-gradient(135deg, #1a1a3e 0%, #1a3a3a 100%);
-            padding: 4rem 2rem;
-            margin-top: 3rem;
-            border-top: 2px solid #00ff88;
-            border-bottom: 2px solid #00ff88;
-        }
-
-        .solution-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .solution h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #00ff88;
-            text-shadow: 0 0 10px #00ff88;
-        }
-
-        .how-it-works {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            margin-bottom: 2rem;
         }
 
-        .step {
-            background: #0a0e27;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
-            transition: all 0.3s;
-            border: 2px solid #00ff88;
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
-        .step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00ffc8 0%, #ff00ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .step-number {
-            background: linear-gradient(135deg, #00ff88 0%, #00cc6f 100%);
-            color: #0a0e27;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .stat-label {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-box {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(0, 255, 200, 0.1) 100%);
+            border: 2px solid rgba(0, 255, 200, 0.3);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
+            font-size: 3rem;
+            color: rgba(0, 255, 200, 0.3);
+            backdrop-filter: blur(10px);
         }
 
-        .step h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #00ff88;
-        }
-
-        /* Gigs Section */
-        .gigs {
-            max-width: 1200px;
-            margin: 4rem auto;
+        /* Features Section */
+        .features {
+            max-width: 1400px;
+            margin: 5rem auto;
             padding: 0 2rem;
         }
 
-        .gigs h2 {
+        .section-title {
             text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #00ff88;
-            text-shadow: 0 0 10px #00ff88;
+            margin-bottom: 4rem;
+            font-weight: 700;
         }
 
-        .gigs-grid {
+        .section-title span {
+            background: linear-gradient(135deg, #00ffc8 0%, #ff00ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
-        .gig-card {
-            background: linear-gradient(135deg, #1a1a3e 0%, #1a3a3a 100%);
+        .feature-card {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(0, 255, 200, 0.05) 100%);
             padding: 2rem;
-            border-radius: 10px;
-            border: 2px solid #00ff88;
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+            border-radius: 15px;
+            border: 2px solid rgba(0, 255, 200, 0.2);
             transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 200, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(0, 255, 200, 0.5);
+            box-shadow: 0 0 30px rgba(0, 255, 200, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #00ffc8;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Gigs Section */
+        .gigs {
+            max-width: 1400px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .gigs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gig-card {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(0, 255, 200, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 255, 200, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
         .gig-card:hover {
+            border-color: rgba(0, 255, 200, 0.5);
+            box-shadow: 0 0 30px rgba(0, 255, 200, 0.2);
             transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
         }
 
         .gig-header {
@@ -279,29 +342,31 @@
 
         .gig-title {
             font-size: 1.3rem;
-            color: #00ff88;
+            color: #00ffc8;
             margin-bottom: 0.5rem;
-        }
-
-        .gig-price {
-            background: linear-gradient(135deg, #00ff88 0%, #00cc6f 100%);
-            color: #0a0e27;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .gig-budget {
-            color: #00ff88;
+            color: #ff00ff;
             font-weight: bold;
             margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .gig-badge {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
 
         .gig-desc {
             color: #b0b0b0;
             margin-bottom: 1rem;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .gig-skills {
@@ -312,12 +377,12 @@
         }
 
         .skill-tag {
-            background: #00ff88;
-            color: #0a0e27;
+            background: linear-gradient(135deg, rgba(0, 255, 200, 0.2) 0%, rgba(124, 58, 237, 0.2) 100%);
+            color: #00ffc8;
             padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 255, 200, 0.3);
         }
 
         .gig-footer {
@@ -326,92 +391,80 @@
             align-items: center;
             margin-top: 1rem;
             padding-top: 1rem;
-            border-top: 1px solid #00ff88;
+            border-top: 1px solid rgba(0, 255, 200, 0.2);
         }
 
         .gig-author {
-            color: #00ff88;
+            color: #00ffc8;
             font-size: 0.9rem;
         }
 
         .apply-btn {
-            background: linear-gradient(135deg, #00ff88 0%, #00cc6f 100%);
-            color: #0a0e27;
-            padding: 0.5rem 1.2rem;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 0.5rem 1rem;
             border: none;
             border-radius: 20px;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 600;
             transition: all 0.3s;
+            font-size: 0.9rem;
         }
 
         .apply-btn:hover {
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
+            box-shadow: 0 0 15px rgba(124, 58, 237, 0.6);
             transform: scale(1.05);
         }
 
         /* Builders Section */
         .builders {
-            background: linear-gradient(135deg, #1a1a3e 0%, #1a3a3a 100%);
-            padding: 4rem 2rem;
-            margin-top: 4rem;
-            border-top: 2px solid #00ff88;
-            border-bottom: 2px solid #00ff88;
-        }
-
-        .builders-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .builders h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #00ff88;
-            text-shadow: 0 0 10px #00ff88;
+            max-width: 1400px;
+            margin: 5rem auto;
+            padding: 0 2rem;
         }
 
         .builders-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
         .builder-card {
-            background: #0a0e27;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(0, 255, 200, 0.05) 100%);
             padding: 2rem;
-            border-radius: 10px;
-            border: 2px solid #00ff88;
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+            border-radius: 15px;
+            border: 2px solid rgba(0, 255, 200, 0.2);
             text-align: center;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .builder-card:hover {
+            border-color: rgba(0, 255, 200, 0.5);
+            box-shadow: 0 0 30px rgba(0, 255, 200, 0.2);
             transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
         }
 
         .builder-avatar {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #00ff88 0%, #00cc6f 100%);
+            background: linear-gradient(135deg, #7c3aed 0%, #00ffc8 100%);
             margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
             font-weight: bold;
-            color: #0a0e27;
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 255, 200, 0.4);
         }
 
         .builder-name {
-            color: #00ff88;
+            color: #00ffc8;
             font-size: 1.2rem;
             margin-bottom: 0.3rem;
-            font-weight: bold;
+            font-weight: 600;
         }
 
         .builder-title {
@@ -429,100 +482,41 @@
         }
 
         .builder-skill {
-            background: #00ff88;
-            color: #0a0e27;
+            background: linear-gradient(135deg, rgba(0, 255, 200, 0.2) 0%, rgba(124, 58, 237, 0.2) 100%);
+            color: #00ffc8;
             padding: 0.3rem 0.6rem;
-            border-radius: 15px;
+            border-radius: 12px;
             font-size: 0.8rem;
-            font-weight: bold;
+            border: 1px solid rgba(0, 255, 200, 0.3);
         }
 
         .builder-rating {
             color: #ffd700;
             margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
         .hire-btn {
-            background: linear-gradient(135deg, #00ff88 0%, #00cc6f 100%);
-            color: #0a0e27;
-            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 0.6rem 1.3rem;
             border: none;
             border-radius: 20px;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 600;
             transition: all 0.3s;
             width: 100%;
         }
 
         .hire-btn:hover {
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
-        }
-
-        /* Features Section */
-        .features {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #00ff88;
-            text-shadow: 0 0 10px #00ff88;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, #1a1a3e 0%, #1a3a3a 100%);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 2px solid #00ff88;
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
-            text-align: center;
-        }
-
-        .feature-card h3 {
-            color: #00ff88;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card p {
-            color: #b0b0b0;
+            box-shadow: 0 0 15px rgba(124, 58, 237, 0.6);
         }
 
         /* Pricing Section */
         .pricing {
-            background: linear-gradient(135deg, #1a1a3e 0%, #1a3a3a 100%);
-            padding: 4rem 2rem;
-            margin-top: 4rem;
-            border-top: 2px solid #00ff88;
-            border-bottom: 2px solid #00ff88;
-        }
-
-        .pricing-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .pricing h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #00ff88;
-            text-shadow: 0 0 10px #00ff88;
+            max-width: 1400px;
+            margin: 5rem auto;
+            padding: 0 2rem;
         }
 
         .pricing-grid {
@@ -534,36 +528,39 @@
         }
 
         .pricing-card {
-            background: #0a0e27;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(0, 255, 200, 0.05) 100%);
             padding: 3rem 2rem;
-            border-radius: 10px;
-            border: 2px solid #00ff88;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 255, 200, 0.2);
             text-align: center;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
             transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
         .pricing-card:hover {
+            border-color: rgba(0, 255, 200, 0.5);
+            box-shadow: 0 0 40px rgba(0, 255, 200, 0.3);
             transform: translateY(-5px);
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
         }
 
         .pricing-card h3 {
-            color: #00ff88;
+            color: #00ffc8;
             font-size: 1.8rem;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .price {
             font-size: 2.5rem;
-            color: #00ff88;
-            font-weight: bold;
+            color: #ff00ff;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
 
         .price-period {
             color: #b0b0b0;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-bottom: 2rem;
         }
 
@@ -578,7 +575,8 @@
             padding-left: 1.5rem;
             position: relative;
             color: #d0d0d0;
-            border-bottom: 1px solid #00ff88;
+            border-bottom: 1px solid rgba(0, 255, 200, 0.1);
+            font-size: 0.95rem;
         }
 
         .pricing-features li:last-child {
@@ -589,52 +587,35 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: #00ff88;
+            color: #00ffc8;
             font-weight: bold;
-        }
-
-        .pricing-features.disabled li:before {
-            content: "✗";
-            color: #666;
-        }
-
-        .pricing-features.disabled li {
-            color: #666;
         }
 
         .pricing-btn {
             margin-top: 2rem;
-            background: linear-gradient(135deg, #00ff88 0%, #00cc6f 100%);
-            color: #0a0e27;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
             padding: 1rem 2rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 30px;
             font-size: 1rem;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             width: 100%;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
         }
 
         .pricing-btn:hover {
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.8);
+            box-shadow: 0 0 35px rgba(124, 58, 237, 0.8);
             transform: scale(1.02);
         }
 
         /* Team Section */
         .team {
-            max-width: 1200px;
-            margin: 4rem auto;
+            max-width: 1400px;
+            margin: 5rem auto;
             padding: 0 2rem;
-        }
-
-        .team h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #00ff88;
-            text-shadow: 0 0 10px #00ff88;
         }
 
         .team-grid {
@@ -644,23 +625,24 @@
         }
 
         .team-member {
-            background: linear-gradient(135deg, #1a1a3e 0%, #1a3a3a 100%);
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(0, 255, 200, 0.05) 100%);
             padding: 2rem;
-            border-radius: 10px;
-            border: 2px solid #00ff88;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 255, 200, 0.2);
             text-align: center;
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
             transition: all 0.3s;
         }
 
         .team-member:hover {
+            border-color: rgba(0, 255, 200, 0.5);
+            box-shadow: 0 0 30px rgba(0, 255, 200, 0.2);
             transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
         }
 
         .team-member h3 {
-            color: #00ff88;
+            color: #00ffc8;
             margin-bottom: 0.3rem;
+            font-weight: 600;
         }
 
         .team-member p {
@@ -670,12 +652,12 @@
 
         /* Footer */
         footer {
-            background: #0a0e27;
+            background: linear-gradient(135deg, rgba(10, 5, 20, 0.9) 0%, rgba(25, 10, 58, 0.9) 100%);
             color: #b0b0b0;
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-top: 2px solid #00ff88;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(0, 255, 200, 0.2);
         }
 
         footer p {
@@ -684,24 +666,41 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+            .hero-container {
+                grid-template-columns: 1fr;
             }
 
-            .two-sided,
-            .how-it-works,
-            .feature-grid,
-            .team-grid,
-            .builders-grid,
-            .gigs-grid,
-            .pricing-grid {
+            .features-grid,
+            .pricing-grid,
+            .team-grid {
                 grid-template-columns: 1fr;
             }
 
             nav ul {
-                flex-direction: column;
                 gap: 1rem;
+                font-size: 0.9rem;
             }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Scroll Down Animation */
+        .scroll-down {
+            color: #00ffc8;
+            text-align: center;
+            margin-top: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
         }
     </style>
 </head>
@@ -709,7 +708,7 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">⚡ SkillLink</div>
+            <div class="logo">SkillLink</div>
             <ul>
                 <li><a href="#problem">Problem</a></li>
                 <li><a href="#solution">How It Works</a></li>
@@ -718,199 +717,207 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#pricing">Pricing</a></li>
             </ul>
+            <button class="signup-btn">Sign In</button>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>⚡ Connect Ideas with Builders</h1>
-            <p>Turn campus skills into real projects. Build your portfolio while solving real problems.</p>
-            <button class="cta-button">🚀 Get Started Now</button>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>SkillLink <span>and Gig Economy</span></h1>
+                <p>Connect student builders with startup ideas. Build real projects, earn real income, and create amazing portfolio pieces together on campus.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">🚀 Start Building</button>
+                    <button class="btn-secondary">📚 Learn More</button>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div>
+                            <div class="stat-number">54+</div>
+                            <div class="stat-label">Active Gigs</div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div>
+                            <div class="stat-number">49+</div>
+                            <div class="stat-label">Builders</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-down">↓ Scroll Down</div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-box">💼</div>
+            </div>
         </div>
     </section>
 
     <!-- Problem Section -->
-    <section class="problem" id="problem">
-        <h2>The Campus Gap</h2>
-        <div class="two-sided">
-            <div class="side">
-                <h3>📚 Students & Builders</h3>
-                <ul>
-                    <li>Skills but no real projects</li>
-                    <li>Weak portfolio for placements</li>
-                    <li>No hands-on experience</li>
-                    <li>Low employability confidence</li>
-                </ul>
+    <section class="features" id="problem">
+        <h2 class="section-title">The <span>Campus Gap</span></h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Verified Campus Network</h3>
+                <p>Only verified students and faculty. Safe, trusted community built within your campus ecosystem.</p>
             </div>
-            <div class="side">
-                <h3>💡 Idea Owners & Founders</h3>
-                <ul>
-                    <li>Ideas but no technical team</li>
-                    <li>Can't afford to hire developers</li>
-                    <li>Projects stuck in notes</li>
-                    <li>No way to find trusted builders</li>
-                </ul>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Secure Collaboration</h3>
+                <p>Built-in escrow, milestone tracking, and dispute resolution to protect all parties.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Real Earnings</h3>
+                <p>Transparent payments, no hidden fees. Withdraw earnings directly to your account anytime.</p>
             </div>
         </div>
     </section>
 
     <!-- Solution Section -->
-    <section class="solution" id="solution">
-        <div class="solution-content">
-            <h2>How SkillLink Works</h2>
-            <div class="how-it-works">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Post Gigs</h3>
-                    <p>Idea owners post projects & gigs</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Browse & Apply</h3>
-                    <p>Builders find & apply to gigs</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Build Together</h3>
-                    <p>Teams collaborate & execute</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Grow & Earn</h3>
-                    <p>Portfolio + experience + income</p>
-                </div>
+    <section class="features" id="solution">
+        <h2 class="section-title">How <span>SkillLink</span> Works</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Post Your Idea</h3>
+                <p>Share your project with clear goals, timeline, and budget. Describe exactly what you need built.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Find Your Team</h3>
+                <p>Browse talented builders with verified skills. Review portfolios and past project success rates.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Build & Earn</h3>
+                <p>Collaborate in real-time. Complete milestones. Get paid. Add portfolio piece. Everyone wins.</p>
             </div>
         </div>
     </section>
 
     <!-- Gigs Section -->
     <section class="gigs" id="gigs">
-        <h2>🔥 Available Gigs</h2>
+        <h2 class="section-title">🔥 Available <span>Gigs</span></h2>
         <div class="gigs-grid">
-            <!-- Gig 1 -->
             <div class="gig-card">
                 <div class="gig-header">
                     <div>
                         <div class="gig-title">E-Commerce Platform</div>
-                        <div class="gig-budget">Budget: ₹50,000</div>
+                        <div class="gig-budget">₹50,000</div>
                     </div>
-                    <div class="gig-price">Open</div>
+                    <span class="gig-badge">Open</span>
                 </div>
-                <div class="gig-desc">Build a full-stack e-commerce platform with payment gateway integration. Need 2-3 developers for 3 months project.</div>
+                <div class="gig-desc">Full-stack e-commerce with payment gateway, inventory tracking, and admin dashboard.</div>
                 <div class="gigs-skills">
                     <span class="skill-tag">React</span>
                     <span class="skill-tag">Node.js</span>
                     <span class="skill-tag">MongoDB</span>
                 </div>
                 <div class="gig-footer">
-                    <span class="gig-author">Posted by: Arjun Patel</span>
-                    <button class="apply-btn">Apply Now</button>
+                    <span class="gig-author">Arjun Patel</span>
+                    <button class="apply-btn">Apply</button>
                 </div>
             </div>
 
-            <!-- Gig 2 -->
             <div class="gig-card">
                 <div class="gig-header">
                     <div>
                         <div class="gig-title">AI Chatbot Build</div>
-                        <div class="gig-budget">Budget: ₹35,000</div>
+                        <div class="gig-budget">₹35,000</div>
                     </div>
-                    <div class="gig-price">Open</div>
+                    <span class="gig-badge">Open</span>
                 </div>
-                <div class="gig-desc">Develop an AI-powered chatbot for customer service. Python expertise required. 6-week project.</div>
+                <div class="gig-desc">AI-powered chatbot for customer service with NLP integration. 6-week timeline.</div>
                 <div class="gigs-skills">
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">AI/ML</span>
                     <span class="skill-tag">Flask</span>
                 </div>
                 <div class="gig-footer">
-                    <span class="gig-author">Posted by: Priya Singh</span>
-                    <button class="apply-btn">Apply Now</button>
+                    <span class="gig-author">Priya Singh</span>
+                    <button class="apply-btn">Apply</button>
                 </div>
             </div>
 
-            <!-- Gig 3 -->
             <div class="gig-card">
                 <div class="gig-header">
                     <div>
-                        <div class="gig-title">Mobile App Development</div>
-                        <div class="gig-budget">Budget: ₹45,000</div>
+                        <div class="gig-title">Mobile App Dev</div>
+                        <div class="gig-budget">₹45,000</div>
                     </div>
-                    <div class="gig-price">Open</div>
+                    <span class="gig-badge">Open</span>
                 </div>
-                <div class="gig-desc">Create a fitness tracking mobile app with real-time sync. Looking for React Native developers.</div>
+                <div class="gig-desc">Fitness tracking app with real-time sync and social features using React Native.</div>
                 <div class="gigs-skills">
                     <span class="skill-tag">React Native</span>
                     <span class="skill-tag">Firebase</span>
                     <span class="skill-tag">UI/UX</span>
                 </div>
                 <div class="gig-footer">
-                    <span class="gig-author">Posted by: Raj Kumar</span>
-                    <button class="apply-btn">Apply Now</button>
+                    <span class="gig-author">Raj Kumar</span>
+                    <button class="apply-btn">Apply</button>
                 </div>
             </div>
 
-            <!-- Gig 4 -->
             <div class="gig-card">
                 <div class="gig-header">
                     <div>
                         <div class="gig-title">SaaS Dashboard</div>
-                        <div class="gig-budget">Budget: ₹40,000</div>
+                        <div class="gig-budget">₹40,000</div>
                     </div>
-                    <div class="gig-price">Open</div>
+                    <span class="gig-badge">Open</span>
                 </div>
-                <div class="gig-desc">Design and develop a SaaS analytics dashboard. Need frontend + backend team. 2-month timeline.</div>
+                <div class="gig-desc">Analytics dashboard with real-time data visualization. 2-month sprint delivery.</div>
                 <div class="gigs-skills">
                     <span class="skill-tag">React</span>
                     <span class="skill-tag">Django</span>
                     <span class="skill-tag">PostgreSQL</span>
                 </div>
                 <div class="gig-footer">
-                    <span class="gig-author">Posted by: Neha Sharma</span>
-                    <button class="apply-btn">Apply Now</button>
+                    <span class="gig-author">Neha Sharma</span>
+                    <button class="apply-btn">Apply</button>
                 </div>
             </div>
 
-            <!-- Gig 5 -->
             <div class="gig-card">
                 <div class="gig-header">
                     <div>
                         <div class="gig-title">Data Analytics Tool</div>
-                        <div class="gig-budget">Budget: ₹30,000</div>
+                        <div class="gig-budget">₹30,000</div>
                     </div>
-                    <div class="gig-price">Open</div>
+                    <span class="gig-badge">Open</span>
                 </div>
-                <div class="gig-desc">Build a data visualization & analytics tool using modern web stack. 4-week sprint-based project.</div>
+                <div class="gig-desc">Data visualization tool with interactive charts. 4-week sprint-based project.</div>
                 <div class="gigs-skills">
                     <span class="skill-tag">D3.js</span>
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">SQL</span>
                 </div>
                 <div class="gig-footer">
-                    <span class="gig-author">Posted by: Vikram Reddy</span>
-                    <button class="apply-btn">Apply Now</button>
+                    <span class="gig-author">Vikram Reddy</span>
+                    <button class="apply-btn">Apply</button>
                 </div>
             </div>
 
-            <!-- Gig 6 -->
             <div class="gig-card">
                 <div class="gig-header">
                     <div>
-                        <div class="gig-title">Cloud Migration Project</div>
-                        <div class="gig-budget">Budget: ₹55,000</div>
+                        <div class="gig-title">Cloud Migration</div>
+                        <div class="gig-budget">₹55,000</div>
                     </div>
-                    <div class="gig-price">Open</div>
+                    <span class="gig-badge">Open</span>
                 </div>
-                <div class="gig-desc">Migrate legacy system to cloud infrastructure. AWS/DevOps expertise needed. 8-week engagement.</div>
+                <div class="gig-desc">Migrate legacy system to AWS with DevOps best practices. 8-week engagement.</div>
                 <div class="gigs-skills">
                     <span class="skill-tag">AWS</span>
                     <span class="skill-tag">DevOps</span>
                     <span class="skill-tag">Docker</span>
                 </div>
                 <div class="gig-footer">
-                    <span class="gig-author">Posted by: Amit Verma</span>
-                    <button class="apply-btn">Apply Now</button>
+                    <span class="gig-author">Amit Verma</span>
+                    <button class="apply-btn">Apply</button>
                 </div>
             </div>
         </div>
@@ -918,233 +925,219 @@
 
     <!-- Builders Section -->
     <section class="builders" id="builders">
-        <div class="builders-content">
-            <h2>🌟 Top Builders on SkillLink</h2>
-            <div class="builders-grid">
-                <!-- Builder 1 -->
-                <div class="builder-card">
-                    <div class="builder-avatar">RS</div>
-                    <div class="builder-name">Rohan Singh</div>
-                    <div class="builder-title">Full Stack Developer</div>
-                    <div class="builder-skills">
-                        <span class="builder-skill">React</span>
-                        <span class="builder-skill">Node.js</span>
-                        <span class="builder-skill">AWS</span>
-                    </div>
-                    <div class="builder-rating">⭐⭐⭐⭐⭐ (4.9/5) • 12 projects</div>
-                    <button class="hire-btn">View Profile</button>
+        <h2 class="section-title">🌟 Top <span>Builders</span></h2>
+        <div class="builders-grid">
+            <div class="builder-card">
+                <div class="builder-avatar">RS</div>
+                <div class="builder-name">Rohan Singh</div>
+                <div class="builder-title">Full Stack Dev</div>
+                <div class="builder-skills">
+                    <span class="builder-skill">React</span>
+                    <span class="builder-skill">Node.js</span>
+                    <span class="builder-skill">AWS</span>
                 </div>
+                <div class="builder-rating">⭐⭐⭐⭐⭐ (4.9/5)</div>
+                <button class="hire-btn">View Profile</button>
+            </div>
 
-                <!-- Builder 2 -->
-                <div class="builder-card">
-                    <div class="builder-avatar">PG</div>
-                    <div class="builder-name">Priya Gupta</div>
-                    <div class="builder-title">React Specialist</div>
-                    <div class="builder-skills">
-                        <span class="builder-skill">React</span>
-                        <span class="builder-skill">TypeScript</span>
-                        <span class="builder-skill">UI/UX</span>
-                    </div>
-                    <div class="builder-rating">⭐⭐⭐⭐⭐ (4.8/5) • 8 projects</div>
-                    <button class="hire-btn">View Profile</button>
+            <div class="builder-card">
+                <div class="builder-avatar">PG</div>
+                <div class="builder-name">Priya Gupta</div>
+                <div class="builder-title">React Specialist</div>
+                <div class="builder-skills">
+                    <span class="builder-skill">React</span>
+                    <span class="builder-skill">TypeScript</span>
+                    <span class="builder-skill">UI/UX</span>
                 </div>
+                <div class="builder-rating">⭐⭐⭐⭐⭐ (4.8/5)</div>
+                <button class="hire-btn">View Profile</button>
+            </div>
 
-                <!-- Builder 3 -->
-                <div class="builder-card">
-                    <div class="builder-avatar">AK</div>
-                    <div class="builder-name">Arjun Kumar</div>
-                    <div class="builder-title">Backend Engineer</div>
-                    <div class="builder-skills">
-                        <span class="builder-skill">Python</span>
-                        <span class="builder-skill">Django</span>
-                        <span class="builder-skill">PostgreSQL</span>
-                    </div>
-                    <div class="builder-rating">⭐⭐⭐⭐⭐ (4.9/5) • 15 projects</div>
-                    <button class="hire-btn">View Profile</button>
+            <div class="builder-card">
+                <div class="builder-avatar">AK</div>
+                <div class="builder-name">Arjun Kumar</div>
+                <div class="builder-title">Backend Engineer</div>
+                <div class="builder-skills">
+                    <span class="builder-skill">Python</span>
+                    <span class="builder-skill">Django</span>
+                    <span class="builder-skill">PostgreSQL</span>
                 </div>
+                <div class="builder-rating">⭐⭐⭐⭐⭐ (4.9/5)</div>
+                <button class="hire-btn">View Profile</button>
+            </div>
 
-                <!-- Builder 4 -->
-                <div class="builder-card">
-                    <div class="builder-avatar">NS</div>
-                    <div class="builder-name">Neha Sharma</div>
-                    <div class="builder-title">Mobile Developer</div>
-                    <div class="builder-skills">
-                        <span class="builder-skill">React Native</span>
-                        <span class="builder-skill">Flutter</span>
-                        <span class="builder-skill">Firebase</span>
-                    </div>
-                    <div class="builder-rating">⭐⭐⭐⭐ (4.7/5) • 10 projects</div>
-                    <button class="hire-btn">View Profile</button>
+            <div class="builder-card">
+                <div class="builder-avatar">NS</div>
+                <div class="builder-name">Neha Sharma</div>
+                <div class="builder-title">Mobile Developer</div>
+                <div class="builder-skills">
+                    <span class="builder-skill">React Native</span>
+                    <span class="builder-skill">Flutter</span>
+                    <span class="builder-skill">Firebase</span>
                 </div>
+                <div class="builder-rating">⭐⭐⭐⭐ (4.7/5)</div>
+                <button class="hire-btn">View Profile</button>
+            </div>
 
-                <!-- Builder 5 -->
-                <div class="builder-card">
-                    <div class="builder-avatar">VK</div>
-                    <div class="builder-name">Vikram Kapoor</div>
-                    <div class="builder-title">AI/ML Engineer</div>
-                    <div class="builder-skills">
-                        <span class="builder-skill">Python</span>
-                        <span class="builder-skill">TensorFlow</span>
-                        <span class="builder-skill">Data Science</span>
-                    </div>
-                    <div class="builder-rating">⭐⭐⭐⭐⭐ (4.8/5) • 9 projects</div>
-                    <button class="hire-btn">View Profile</button>
+            <div class="builder-card">
+                <div class="builder-avatar">VK</div>
+                <div class="builder-name">Vikram Kapoor</div>
+                <div class="builder-title">AI/ML Engineer</div>
+                <div class="builder-skills">
+                    <span class="builder-skill">Python</span>
+                    <span class="builder-skill">TensorFlow</span>
+                    <span class="builder-skill">Data Science</span>
                 </div>
+                <div class="builder-rating">⭐⭐⭐⭐⭐ (4.8/5)</div>
+                <button class="hire-btn">View Profile</button>
+            </div>
 
-                <!-- Builder 6 -->
-                <div class="builder-card">
-                    <div class="builder-avatar">RJ</div>
-                    <div class="builder-name">Rajesh Jain</div>
-                    <div class="builder-title">DevOps Expert</div>
-                    <div class="builder-skills">
-                        <span class="builder-skill">AWS</span>
-                        <span class="builder-skill">Docker</span>
-                        <span class="builder-skill">Kubernetes</span>
-                    </div>
-                    <div class="builder-rating">⭐⭐⭐⭐⭐ (4.9/5) • 7 projects</div>
-                    <button class="hire-btn">View Profile</button>
+            <div class="builder-card">
+                <div class="builder-avatar">RJ</div>
+                <div class="builder-name">Rajesh Jain</div>
+                <div class="builder-title">DevOps Expert</div>
+                <div class="builder-skills">
+                    <span class="builder-skill">AWS</span>
+                    <span class="builder-skill">Docker</span>
+                    <span class="builder-skill">Kubernetes</span>
                 </div>
+                <div class="builder-rating">⭐⭐⭐⭐⭐ (4.9/5)</div>
+                <button class="hire-btn">View Profile</button>
+            </div>
 
-                <!-- Builder 7 -->
-                <div class="builder-card">
-                    <div class="builder-avatar">SK</div>
-                    <div class="builder-name">Sarah Khan</div>
-                    <div class="builder-title">Full Stack Developer</div>
-                    <div class="builder-skills">
-                        <span class="builder-skill">Vue.js</span>
-                        <span class="builder-skill">Laravel</span>
-                        <span class="builder-skill">MySQL</span>
-                    </div>
-                    <div class="builder-rating">⭐⭐⭐⭐ (4.6/5) • 11 projects</div>
-                    <button class="hire-btn">View Profile</button>
+            <div class="builder-card">
+                <div class="builder-avatar">SK</div>
+                <div class="builder-name">Sarah Khan</div>
+                <div class="builder-title">Full Stack Dev</div>
+                <div class="builder-skills">
+                    <span class="builder-skill">Vue.js</span>
+                    <span class="builder-skill">Laravel</span>
+                    <span class="builder-skill">MySQL</span>
                 </div>
+                <div class="builder-rating">⭐⭐⭐⭐ (4.6/5)</div>
+                <button class="hire-btn">View Profile</button>
+            </div>
 
-                <!-- Builder 8 -->
-                <div class="builder-card">
-                    <div class="builder-avatar">MV</div>
-                    <div class="builder-name">Manoj Verma</div>
-                    <div class="builder-title">UI/UX Designer</div>
-                    <div class="builder-skills">
-                        <span class="builder-skill">Figma</span>
-                        <span class="builder-skill">CSS</span>
-                        <span class="builder-skill">Design</span>
-                    </div>
-                    <div class="builder-rating">⭐⭐⭐⭐⭐ (4.9/5) • 14 projects</div>
-                    <button class="hire-btn">View Profile</button>
+            <div class="builder-card">
+                <div class="builder-avatar">MV</div>
+                <div class="builder-name">Manoj Verma</div>
+                <div class="builder-title">UI/UX Designer</div>
+                <div class="builder-skills">
+                    <span class="builder-skill">Figma</span>
+                    <span class="builder-skill">CSS</span>
+                    <span class="builder-skill">Design</span>
                 </div>
+                <div class="builder-rating">⭐⭐⭐⭐⭐ (4.9/5)</div>
+                <button class="hire-btn">View Profile</button>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <h2>✨ Key Features</h2>
-        <div class="feature-grid">
+        <h2 class="section-title">✨ Why Choose <span>SkillLink</span></h2>
+        <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">👤</div>
                 <h3>Smart Profiles</h3>
-                <p>Showcase skills, projects, and experience in one place</p>
+                <p>Showcase your skills, completed projects, and experience to attract quality opportunities.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔍</div>
-                <h3>Project Discovery</h3>
-                <p>Find gigs that match your skills and interests</p>
+                <h3>Smart Matching</h3>
+                <p>AI-powered matching connects you with perfect project fits based on your skills and interests.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">⭐</div>
-                <h3>Trust & Ratings</h3>
-                <p>Build reputation through peer reviews and ratings</p>
+                <h3>Build Reputation</h3>
+                <p>Earn verified badges and reviews that prove your capabilities to future clients and employers.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🤝</div>
-                <h3>Team Collaboration</h3>
-                <p>Work together with clear roles and milestones</p>
+                <h3>Collaboration Tools</h3>
+                <p>Built-in messaging, file sharing, and milestone tracking for seamless team communication.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📈</div>
                 <h3>Portfolio Growth</h3>
-                <p>Document and showcase completed projects</p>
+                <p>Document every project. Build a professional portfolio that impresses employers and investors.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🎓</div>
-                <h3>Campus-Only</h3>
-                <p>Safe, verified community of students and faculty</p>
+                <div class="feature-icon">💰</div>
+                <h3>Real Earnings</h3>
+                <p>Get paid for your skills. Transparent pricing, no hidden fees, instant withdrawals to bank.</p>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
-        <div class="pricing-content">
-            <h2>💰 Pricing Plans</h2>
-            <div class="pricing-grid">
-                <!-- Free Plan -->
-                <div class="pricing-card">
-                    <h3>📦 Free Plan</h3>
-                    <div class="price">₹0</div>
-                    <div class="price-period">Forever Free</div>
-                    <ul class="pricing-features">
-                        <li>Create basic profile</li>
-                        <li>Browse available gigs</li>
-                        <li>Apply to 5 gigs/month</li>
-                        <li>Limited portfolio showcase</li>
-                        <li>Basic ratings & reviews</li>
-                        <li>Community access</li>
-                    </ul>
-                    <button class="pricing-btn">Start Free</button>
-                </div>
+        <h2 class="section-title">💰 Pricing <span>Plans</span></h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>📦 Free Plan</h3>
+                <div class="price">₹0</div>
+                <div class="price-period">Forever Free</div>
+                <ul class="pricing-features">
+                    <li>Create basic profile</li>
+                    <li>Browse all gigs</li>
+                    <li>Apply to 5 gigs/month</li>
+                    <li>Basic portfolio</li>
+                    <li>Community access</li>
+                    <li>Ratings & reviews</li>
+                </ul>
+                <button class="pricing-btn">Get Started</button>
+            </div>
 
-                <!-- Premium Plan -->
-                <div class="pricing-card">
-                    <h3>⚡ Premium Plan</h3>
-                    <div class="price">₹79</div>
-                    <div class="price-period">One-time payment</div>
-                    <ul class="pricing-features">
-                        <li>✓ Premium profile with badges</li>
-                        <li>✓ Unlimited gig applications</li>
-                        <li>✓ Priority in search results</li>
-                        <li>✓ Full portfolio showcase</li>
-                        <li>✓ Advanced analytics & insights</li>
-                        <li>✓ Direct messaging with teams</li>
-                        <li>✓ Project management tools</li>
-                        <li>✓ Verified builder badge</li>
-                        <li>✓ Earn & withdraw payments</li>
-                        <li>✓ Certificate of completion</li>
-                    </ul>
-                    <button class="pricing-btn">Unlock Premium</button>
-                </div>
+            <div class="pricing-card">
+                <h3>⚡ Premium Plan</h3>
+                <div class="price">₹79</div>
+                <div class="price-period">One-time payment</div>
+                <ul class="pricing-features">
+                    <li>Premium profile badge</li>
+                    <li>Unlimited applications</li>
+                    <li>Priority in search</li>
+                    <li>Full portfolio showcase</li>
+                    <li>Direct messaging</li>
+                    <li>Project management tools</li>
+                    <li>Verified badge</li>
+                    <li>Advanced analytics</li>
+                    <li>Certificate of completion</li>
+                    <li>Instant withdrawals</li>
+                </ul>
+                <button class="pricing-btn">Unlock Premium</button>
             </div>
         </div>
     </section>
 
     <!-- Team Section -->
     <section class="team" id="team">
-        <h2>👥 Our SkillLink Team</h2>
+        <h2 class="section-title">👥 Our <span>Team</span></h2>
         <div class="team-grid">
             <div class="team-member">
                 <h3>Vairab</h3>
                 <p><strong>Product Manager</strong></p>
-                <p>Defines product flow & MVP features</p>
+                <p>Defines product vision & MVP</p>
             </div>
             <div class="team-member">
                 <h3>Aniket</h3>
-                <p><strong>Frontend Developer</strong></p>
-                <p>Builds UI & user experience</p>
+                <p><strong>Frontend Dev</strong></p>
+                <p>Builds UI & UX</p>
             </div>
             <div class="team-member">
                 <h3>Sayan</h3>
                 <p><strong>Market Researcher</strong></p>
-                <p>Studies audience & positioning</p>
+                <p>Audience & positioning</p>
             </div>
             <div class="team-member">
                 <h3>Biswarup</h3>
                 <p><strong>Content Strategist</strong></p>
-                <p>Crafts messaging & storytelling</p>
+                <p>Messaging & storytelling</p>
             </div>
             <div class="team-member">
                 <h3>Backend Dev</h3>
-                <p><strong>Technical Lead</strong></p>
-                <p>Backend architecture & deployment</p>
+                <p><strong>Tech Lead</strong></p>
+                <p>Backend & DevOps</p>
             </div>
         </div>
     </section>
@@ -1152,7 +1145,7 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 SkillLink. Connecting ideas with builders on campus.</p>
-        <p>⚡ Turn skills into projects. Build your future. Earn while learning.</p>
+        <p>💡 Turn skills into projects. 🚀 Build your future. 💰 Earn while learning.</p>
     </footer>
 </body>
 </html>
